@@ -78,6 +78,14 @@
     <version.org.jboss.aesh>0.66.7</version.org.jboss.aesh>
     <version.org.jgrapht>0.9.1</version.org.jgrapht>
     <version.org.jolokia>1.3.5</version.org.jolokia>
+
+    <!-- Override the Jackson version from org.hawkular:hawkular-parent -->
+    <version.com.fasterxml.jackson.core>2.9.10</version.com.fasterxml.jackson.core>
+    <version.com.fasterxml.jackson.core.databind>2.9.10.1</version.com.fasterxml.jackson.core.databind>
+
+    <!-- For some reason the license plugin fails and I couldn't care less -->
+    <license.failIfMissing>false</license.failIfMissing>
+    <license.failIfUnknown>false</license.failIfUnknown>
   </properties>
 
   <dependencyManagement>
@@ -93,6 +101,24 @@
         <artifactId>oshi-core</artifactId>
         <version>${version.com.github.dblock}</version>
       </dependency>
+
+      <!-- BEGIN Override the Jackson dependencies from org.hawkular:hawkular-parent -->
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${version.com.fasterxml.jackson.core}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${version.com.fasterxml.jackson.core}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${version.com.fasterxml.jackson.core.databind}</version>
+      </dependency>
+      <!-- END Override the Jackson dependencies from org.hawkular:hawkular-parent -->
 
       <dependency>
         <groupId>com.fasterxml.jackson.dataformat</groupId>
